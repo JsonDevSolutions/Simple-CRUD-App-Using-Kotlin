@@ -35,9 +35,10 @@ class ProductDetailsFragment : Fragment() {
 
         viewModel.productDetails(productId).observe(viewLifecycleOwner
         ) { details ->
-            val txtProductName = view?.findViewById<TextView>(R.id.product_name)
-            val txtDescription = view?.findViewById<TextView>(R.id.description)
-            val txtPrice = view?.findViewById<TextView>(R.id.price)
+
+            val txtProductName = binding.productName
+            val txtDescription = binding.description
+            val txtPrice = binding.price
 
             txtProductName?.text = details.name
             txtDescription?.text = details.description
