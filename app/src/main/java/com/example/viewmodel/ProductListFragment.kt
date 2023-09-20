@@ -45,6 +45,12 @@ class ProductListFragment : Fragment() {
             val action = ProductListFragmentDirections.actionProductListFragmentToCartPageFragment()
             viewCart.findNavController().navigate(action)
         }
+
+        val logout = view?.findViewById<TextView>(R.id.logout)
+        logout?.setOnClickListener{
+            val action = ProductListFragmentDirections.actionProductListFragmentToLoginFragment()
+            logout.findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_productListFragment_to_cartPageFragment"
             app:destination="@id/cartPageFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
