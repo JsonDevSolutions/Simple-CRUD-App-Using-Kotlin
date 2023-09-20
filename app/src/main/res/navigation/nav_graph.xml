@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.viewmodel.ProductListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_cartPageFragment"
+            app:destination="@id/cartPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.viewmodel.ProductDetailsFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument android:name="productId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartPageFragment"
+        android:name="com.example.viewmodel.CartPageFragment"
+        android:label="Cart Page"
+        tools:layout="@layout/fragment_cart_page" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.viewmodel.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+</navigation>
