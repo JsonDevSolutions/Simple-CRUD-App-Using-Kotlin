@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:padding="10dp"
-        android:gravity="center_vertical">
+        android:padding="30dp"
+        android:paddingHorizontal="10dp">
 
         <TextView
             android:id="@+id/textView"
@@ -22,13 +23,15 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/first_name"
+            android:id="@+id/first_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
             android:text="First Name"
-            android:paddingVertical="10dp"/>
+            android:textColor="#000000" />
+
         <EditText
-            android:id="@+id/first_name_label"
+            android:id="@+id/first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner"
@@ -40,13 +43,15 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/last_name"
+            android:id="@+id/last_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
             android:text="Last Name"
-            android:paddingVertical="10dp"/>
+            android:textColor="#000000" />
+
         <EditText
-            android:id="@+id/last_name_label"
+            android:id="@+id/last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner"
@@ -61,16 +66,18 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email Address"
             android:inputType="textEmailAddress"
-            android:paddingVertical="10dp"/>
+            android:paddingVertical="10dp"
+            android:text="Email Address"
+            android:textColor="#000000" />
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner"
             android:ems="10"
-            android:hint="Email"
+            android:hint="example@mail.com"
             android:inputType="text"
             android:padding="10dp"
             android:singleLine="true"
@@ -80,8 +87,10 @@
             android:id="@+id/password_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
             android:text="Password"
-            android:paddingVertical="10dp"/>
+            android:textColor="#000000" />
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -98,27 +107,44 @@
             android:id="@+id/checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Password"
+            android:layout_marginStart="0dp"
             android:paddingLeft="0dp"
-            android:layout_marginStart="0dp"/>
+            android:text="Show Password" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner"
-            android:backgroundTint="#0D6EFD"
-            android:text="Login"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp"/>
+            android:backgroundTint="#000000"
+            android:text="Register"
+            android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/view_login"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="#0D6EFD"
-            android:layout_marginTop="10dp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/view_login_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="Already have an account?"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/view_login"
+                android:layout_width="91dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/login"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>

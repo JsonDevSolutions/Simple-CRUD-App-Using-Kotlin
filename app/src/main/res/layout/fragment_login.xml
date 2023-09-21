@@ -8,16 +8,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:padding="10dp"
-        android:gravity="center_vertical">
+        android:padding="30dp"
+        android:paddingHorizontal="10dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:fontFamily="sans-serif-light"
+            android:text="Welcome back"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -26,8 +28,10 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
             android:text="Email Address"
-            android:paddingVertical="10dp"/>
+            android:textColor="#000000" />
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -44,8 +48,10 @@
             android:id="@+id/password_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
             android:text="Password"
-            android:paddingVertical="10dp"/>
+            android:textColor="#000000" />
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -62,26 +68,40 @@
             android:id="@+id/checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Password"
-            android:paddingLeft="0dp"
-            android:layout_marginStart="0dp"/>
+            android:text="Show Password" />
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner"
-            android:backgroundTint="#0D6EFD"
+            android:backgroundTint="#222222"
             android:text="Login"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp"/>
+            android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/nav_register"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create new account"
-            android:textColor="#0D6EFD"
-            android:layout_marginTop="10dp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/view_login_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="Don't have an account?"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/nav_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/create_new_account"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>
