@@ -9,3 +9,9 @@ data class CartItem(
     val updatedAt: String,
     val userId: Int
 )
+
+data class CartRequest(
+    val userId: Int,
+    val productId: Int,
+    val quantity: Int
+)

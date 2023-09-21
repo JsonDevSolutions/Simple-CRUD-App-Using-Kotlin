@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +13,12 @@ import androidx.fragment.app.viewModels
 import coil.ImageLoader
 import coil.request.ImageRequest
 import com.example.viewmodel.databinding.FragmentProductDetailsBinding
+import com.example.viewmodel.ui.theme.CartViewModel
 import com.example.viewmodel.ui.theme.ProductViewModel
 
 class ProductDetailsFragment : Fragment() {
     private val viewModel: ProductViewModel by viewModels()
+    private val viewModelCart: CartViewModel by viewModels()
     private var _binding: FragmentProductDetailsBinding? = null
     private val binding get() = _binding!!
     private lateinit var productId: String
@@ -42,6 +45,7 @@ class ProductDetailsFragment : Fragment() {
             val txtDescription = binding.description
             val txtPrice = binding.price
             val image: ImageView = binding.productImageDetails
+            val addToCart: Button = binding.btnAddToCart
 
             txtProductName?.text = details.name
             txtDescription?.text = details.description
@@ -63,6 +67,12 @@ class ProductDetailsFragment : Fragment() {
             // Load the image using Coil
             if (request != null) {
                 imageLoader?.enqueue(request)
+            }
+
+            addToCart.setOnClickListener{
+                val cart = CartRequest(1, details.id, 1)
+                viewModelCart.addCart(cart)
+                viewModelCart.cartItemsCount(1)
             }
         }
         return binding.root

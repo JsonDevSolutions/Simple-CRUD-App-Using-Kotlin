@@ -47,7 +47,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/quantity_cart"
                 android:layout_width="171dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -58,15 +58,17 @@
                 android:inputType="number"
                 android:padding="10dp"
                 android:singleLine="true"
+                android:text="1"
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_add_to_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/baseline_add_shopping_cart_24"
                 android:backgroundTint="#0D6EFD"
+                android:cursorVisible="true"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
     </LinearLayout>

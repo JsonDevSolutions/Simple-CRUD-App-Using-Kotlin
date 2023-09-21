@@ -35,6 +35,11 @@ class CartPageFragment : Fragment() {
             recyclerView.adapter = cartAdapter
         }
         _binding = FragmentCartPageBinding.inflate(inflater, container, false);
+
+        viewModel.cartItemsCount(1).observe(viewLifecycleOwner
+        ) { cartItemsCount ->
+            binding.actionBar.cartCount.text = cartItemsCount.toString()
+        }
         // Inflate the layout for this fragment
         return binding.root
     }

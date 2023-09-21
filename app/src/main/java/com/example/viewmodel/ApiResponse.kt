@@ -1,5 +1,11 @@
 package com.example.viewmodel
 
+data class ApiResponse(
+    val message: String,
+    val statusCode: Int,
+    val success: Boolean
+)
+
 data class LoginResponse(
     val data: LoginData,
     val message: String,
