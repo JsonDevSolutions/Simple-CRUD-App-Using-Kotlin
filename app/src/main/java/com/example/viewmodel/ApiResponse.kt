@@ -9,9 +9,9 @@ data class LoginResponse(
 
 data class LoginData(
     val access_token: String,
+    val id: Int,
     val email: String,
     val firstName: String,
-    val id: Int,
+    val lastName: String,
     val isAdmin: Boolean,
-    val lastName: String
 )
