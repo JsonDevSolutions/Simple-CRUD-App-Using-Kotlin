@@ -9,49 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#212529"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/txtLogo"
-                android:layout_width="276dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="GADGET PH"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/view_cart"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:text="Cart (4)"
-                android:textColor="#6C757D" />
-
-            <TextView
-                android:id="@+id/logout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:linksClickable="true"
-                android:text="Logout"
-                android:textColor="#6C757D" />
-        </LinearLayout>
-
+        <include android:id="@+id/action_bar" layout="@layout/custom_action_bar" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_products"
             android:layout_width="match_parent"
