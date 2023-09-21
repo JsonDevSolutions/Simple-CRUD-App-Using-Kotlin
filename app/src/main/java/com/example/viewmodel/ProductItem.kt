@@ -1,5 +1,6 @@
 package com.example.viewmodel
 
+class Product : ArrayList<ProductItem>()
 data class ProductItem(
     val createAt: String,
     val description: String,
@@ -7,5 +8,6 @@ data class ProductItem(
     val name: String,
     val price: Int,
     val published: Boolean,
-    val updatedAt: String
+    val updatedAt: String,
+    val image: String
 )

@@ -84,4 +84,10 @@ dependencies {
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+
+    // Preferences DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Coil Images
+    implementation("io.coil-kt:coil:2.4.0")
 }
