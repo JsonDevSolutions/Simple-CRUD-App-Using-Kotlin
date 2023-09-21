@@ -13,6 +13,9 @@ interface ApiInterface {
     @GET("product/{id}")
     fun getProductDetails(@Path("id") id: String): Call<ProductItem>
 
+    @GET("cart/{userId}")
+    fun getCartItems(@Path("userId") userId: String): Call<List<CartItem>>
+
     @POST("auth/login")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
