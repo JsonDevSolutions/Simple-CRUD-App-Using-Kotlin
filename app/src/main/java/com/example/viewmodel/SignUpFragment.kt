@@ -1,6 +1,8 @@
 package com.example.viewmodel
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.InputType
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,14 +17,15 @@ import com.example.viewmodel.databinding.FragmentSignUpBinding
 import com.example.viewmodel.ui.theme.AuthViewModel
 
 class SignUpFragment : Fragment() {
+    private var isPassword = true
     private val viewModel: AuthViewModel by viewModels()
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val login = binding.viewLogin
-        login?.setOnClickListener{
+        login.setOnClickListener{
             val action = SignUpFragmentDirections.actionSignUpFragmentToLoginFragment()
-            login?.findNavController()?.navigate(action)
+            login.findNavController()?.navigate(action)
         }
 
         val btnSignup = binding.btnSignup
@@ -31,8 +34,22 @@ class SignUpFragment : Fragment() {
             viewModel.signUpResponse.observe(viewLifecycleOwner
             ) { response ->
                 if(response !== null){
-                    Log.d("AuthActivity", "On success: $response")
+                    clearTextValues()
+                    binding.registrationMessage.visibility = View.VISIBLE
                 }
+            }
+        }
+
+        val showPassword = binding.showPassword
+        showPassword.setOnClickListener{
+            val password = binding.password
+
+            isPassword = !isPassword
+
+            if(isPassword) {
+                password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            } else {
+                password.inputType = InputType.TYPE_CLASS_TEXT
             }
         }
     }
@@ -40,7 +57,7 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Retrieve and inflate the layout for this fragment
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -54,5 +71,13 @@ class SignUpFragment : Fragment() {
 
         val user = User(firstName, lastName, email, password)
         viewModel.signUp(user)
+    }
+
+    private fun clearTextValues() {
+        val emptyString = Editable.Factory.getInstance().newEditable("")
+        binding.firstName.text = emptyString
+        binding.lastName.text = emptyString
+        binding.email.text = emptyString
+        binding.password.text = emptyString
     }
 }

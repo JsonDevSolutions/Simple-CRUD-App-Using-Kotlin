@@ -35,7 +35,7 @@ class ProductDetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Retrieve and inflate the layout for this fragment
         _binding = FragmentProductDetailsBinding.inflate(inflater, container, false)
 
@@ -47,9 +47,9 @@ class ProductDetailsFragment : Fragment() {
             val image: ImageView = binding.productImageDetails
             val addToCart: Button = binding.btnAddToCart
 
-            txtProductName?.text = details.name
-            txtDescription?.text = details.description
-            txtPrice?.text = "$" + details.price.toString()
+            txtProductName.text = details.name
+            txtDescription.text = details.description
+            txtPrice.text = "$" + details.price.toString()
 
             val imageLoader = view?.context?.let {
                 ImageLoader.Builder(it)
@@ -70,9 +70,8 @@ class ProductDetailsFragment : Fragment() {
             }
 
             addToCart.setOnClickListener{
-                val cart = CartRequest(1, details.id, 1)
+                val cart = CartRequest(USER_ID, details.id, 1)
                 viewModelCart.addCart(cart)
-                viewModelCart.cartItemsCount(1)
             }
         }
         return binding.root

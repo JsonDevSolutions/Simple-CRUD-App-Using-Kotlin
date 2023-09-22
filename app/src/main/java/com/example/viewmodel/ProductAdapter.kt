@@ -58,9 +58,8 @@ class ProductAdapter(private val productList: List<ProductItem>, private val vie
         }
 
         holder.addToCart.setOnClickListener{
-            val cart = CartRequest(1, productList[position].id, holder.quantity.text.toString().toInt())
+            val cart = CartRequest(USER_ID, productList[position].id, holder.quantity.text.toString().toInt())
             viewModel.addCart(cart)
-            viewModel.cartItemsCount(1)
         }
     }
 }

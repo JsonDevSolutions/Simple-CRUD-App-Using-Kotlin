@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -28,10 +30,11 @@ class MainActivity : AppCompatActivity() {
         // Get the navigation host fragment from this Activity
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
         // Instantiate the navController using the NavHostFragment
         navController = navHostFragment.navController
+
         // Make sure actions in the ActionBar get propagated to the NavController
-        supportActionBar?.hide()
         setupActionBarWithNavController(navController)
     }
 

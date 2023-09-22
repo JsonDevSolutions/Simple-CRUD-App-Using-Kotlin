@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.viewmodel.ApiInterface
+import com.example.viewmodel.BASE_URL
 import com.example.viewmodel.ProductItem
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,7 +16,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ProductViewModel: ViewModel() {
     private var _products = MutableLiveData<List<ProductItem>>()
     private var _productDetails = MutableLiveData<ProductItem>()
-    private val BASE_URL = "http://192.168.1.3:3333/"
 
     val products: LiveData<List<ProductItem>>
         get() = _products
