@@ -30,17 +30,24 @@
 
             <TextView
                 android:id="@+id/quantity"
-                android:layout_width="56dp"
+                android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:text="Price" />
 
             <TextView
                 android:id="@+id/total"
-                android:layout_width="76dp"
+                android:layout_width="58dp"
                 android:layout_height="match_parent"
-                android:text="Total"
                 android:paddingLeft="10dp"
+                android:text="Total"
                 android:textAlignment="textStart" />
+
+            <ImageView
+                android:id="@+id/delete_item"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/delete" />
         </LinearLayout>
 
         <View

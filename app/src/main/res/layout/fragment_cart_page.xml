@@ -44,9 +44,9 @@
 
             <TextView
                 android:id="@+id/quantity"
-                android:layout_width="wrap_content"
+                android:layout_width="33dp"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
+                android:text="Qty"
                 android:textStyle="bold" />
 
             <TextView

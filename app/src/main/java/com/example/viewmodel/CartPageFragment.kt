@@ -1,6 +1,7 @@
 package com.example.viewmodel
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,16 +28,16 @@ class CartPageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel.cartItems.observe(viewLifecycleOwner
         ) { cartItems ->
-            cartAdapter = CartAdapter(cartItems)
+            cartAdapter = CartAdapter(cartItems, viewModel)
             cartAdapter.notifyDataSetChanged()
             recyclerView.adapter = cartAdapter
         }
-        _binding = FragmentCartPageBinding.inflate(inflater, container, false);
+        _binding = FragmentCartPageBinding.inflate(inflater, container, false)
 
-        viewModel.cartItemsCount(1).observe(viewLifecycleOwner
+        viewModel.cartItemsCount().observe(viewLifecycleOwner
         ) { cartItemsCount ->
             binding.actionBar.cartCount.text = cartItemsCount.toString()
         }
@@ -45,7 +46,7 @@ class CartPageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val home = view?.findViewById<TextView>(R.id.txtLogo)
+        val home = view.findViewById<TextView>(R.id.txtLogo)
         home?.setOnClickListener{
             val action = CartPageFragmentDirections.actionCartPageFragmentToProductListFragment()
             home.findNavController().navigate(action)
