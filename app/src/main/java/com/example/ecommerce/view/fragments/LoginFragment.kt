@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
                         USER_ID = response.data.id
                         // Navigate to homepage
                         val action = LoginFragmentDirections.actionLoginFragmentToProductListFragment()
-                        btnLogin.findNavController()?.navigate(action)
+                        btnLogin.findNavController().navigate(action)
                     }
                 } else {
                     binding.loginMessage.visibility = View.VISIBLE
@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
         navRegister.setOnClickListener{
 
             val action = LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
-            navRegister.findNavController()?.navigate(action)
+            navRegister.findNavController().navigate(action)
         }
 
         val showPassword = binding.showPassword

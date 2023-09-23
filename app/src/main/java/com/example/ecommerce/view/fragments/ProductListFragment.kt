@@ -14,14 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerce.R
 import com.example.ecommerce.databinding.FragmentProductListBinding
 import com.example.ecommerce.datastore.LoggedInUserDetails
-import com.example.ecommerce.model.dataclasses.LoginData
 import com.example.ecommerce.view.adapters.ProductAdapter
 import com.example.ecommerce.viewmodel.AuthViewModel
 import com.example.ecommerce.viewmodel.CartViewModel
 import com.example.ecommerce.viewmodel.ProductViewModel
-import com.google.gson.Gson
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 
 class ProductListFragment : Fragment() {

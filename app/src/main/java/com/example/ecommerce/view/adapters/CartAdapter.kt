@@ -47,7 +47,7 @@ class CartAdapter(private val cartItems: MutableList<CartItem>, private val view
         holder.delete.setOnClickListener{
             Log.d("AuthActivity", "onFailure: " + cartItems.count() + " " + position)
             viewModel.deleteCartItem(item.productId)
-            cartItems?.removeAt(position)
+            cartItems.removeAt(position)
             notifyItemRemoved(position)
         }
     }

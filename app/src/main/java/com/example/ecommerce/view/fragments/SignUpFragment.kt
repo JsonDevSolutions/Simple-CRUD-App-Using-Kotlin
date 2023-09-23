@@ -22,7 +22,7 @@ class SignUpFragment : Fragment() {
         val login = binding.viewLogin
         login.setOnClickListener{
             val action = SignUpFragmentDirections.actionSignUpFragmentToLoginFragment()
-            login.findNavController()?.navigate(action)
+            login.findNavController().navigate(action)
         }
 
         val btnSignup = binding.btnSignup

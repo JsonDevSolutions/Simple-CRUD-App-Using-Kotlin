@@ -1,7 +1,6 @@
 package com.example.ecommerce.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -13,7 +12,6 @@ import com.example.ecommerce.databinding.ActivityMainBinding
 import com.example.ecommerce.datastore.LoggedInUserDetails
 import com.example.ecommerce.model.dataclasses.LoginData
 import com.example.ecommerce.view.fragments.LoginFragmentDirections
-import com.example.ecommerce.view.fragments.ProductListFragmentDirections
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
@@ -40,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         val scope = lifecycleScope
         scope.launch {
-            val loginData = gson.fromJson(dataStore?.getLoggedInUserDetails?.firstOrNull(), LoginData::class.java)
+            val loginData = gson.fromJson(dataStore.getLoggedInUserDetails.firstOrNull(), LoginData::class.java)
 
             if(loginData !== null) {
                 USER_ID = loginData.id
