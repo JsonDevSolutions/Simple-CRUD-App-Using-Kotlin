@@ -13,7 +13,7 @@ import androidx.navigation.findNavController
 import com.example.ecommerce.model.dataclasses.LoginData
 import com.example.ecommerce.USER_ID
 import com.example.ecommerce.databinding.FragmentLoginBinding
-import com.example.ecommerce.datastore.StoreLoggedInUserDetails
+import com.example.ecommerce.datastore.LoggedInUserDetails
 import com.example.ecommerce.viewmodel.AuthViewModel
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.firstOrNull
@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
         var isPassword = true
         val btnLogin = binding.btnLogin
         val scope = viewLifecycleOwner.lifecycleScope
-        val dataStore = context?.let { it1 -> StoreLoggedInUserDetails(it1) }
+        val dataStore = context?.let { it1 -> LoggedInUserDetails(it1) }
         btnLogin.setOnClickListener{
             onLogin()
             viewModel.loginResponse.observe(viewLifecycleOwner
