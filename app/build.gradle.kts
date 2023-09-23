@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.viewmodel"
+    namespace = "com.example.ecommerce"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.viewmodel"
+        applicationId = "com.example.ecommerce"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

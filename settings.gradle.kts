@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ViewModel"
+rootProject.name = "ECommerce"
 include(":app")
  

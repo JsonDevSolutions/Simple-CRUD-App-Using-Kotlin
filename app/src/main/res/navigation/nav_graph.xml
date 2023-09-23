@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.example.viewmodel.ProductListFragment"
+        android:name="com.example.ecommerce.view.fragments.ProductListFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_product_list">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.example.viewmodel.ProductDetailsFragment"
+        android:name="com.example.ecommerce.view.fragments.ProductDetailsFragment"
         android:label="Product Details"
         tools:layout="@layout/fragment_product_details" >
         <argument android:name="productId"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartPageFragment"
-        android:name="com.example.viewmodel.CartPageFragment"
+        android:name="com.example.ecommerce.view.fragments.CartPageFragment"
         android:label="Cart Page"
         tools:layout="@layout/fragment_cart_page" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.viewmodel.LoginFragment"
+        android:name="com.example.ecommerce.view.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.viewmodel.SignUpFragment"
+        android:name="com.example.ecommerce.view.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action

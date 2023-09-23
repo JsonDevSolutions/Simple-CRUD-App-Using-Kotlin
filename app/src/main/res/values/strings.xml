@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ViewModel</string>
+    <string name="app_name">E-Commerse</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Black Cart Page</string>
     <string name="look_up_words">Show Stored Words</string>
